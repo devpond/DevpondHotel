@@ -12,6 +12,7 @@ namespace DPHotel.Web.Models
         public DateTime LastUpdated { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
+        public HotelImage MainImage { get; set; }
 
         public ICollection<Room> Rooms { get; set; }
         public ICollection<HotelImage> Images { get; set; }
@@ -26,7 +27,7 @@ namespace DPHotel.Web.Models
         public string Description { get; set; }
         public string FileName { get; set; }
         public int Width { get; set; }
-        public int Length { get; set; }
+        public int Height { get; set; }
         public string Orientation { get; set; }
         public Hotel Hotel { get; set; }
     }
@@ -37,6 +38,7 @@ namespace DPHotel.Web.Models
         public DateTime LastUpdated { get; set; }
         public RoomType RoomType { get; set; }
         public int Number { get; set; }
+        public RoomImage MainImage { get; set; }
         public Hotel Hotel { get; set; }
 
         public ICollection<RoomImage> Images { get; set; }
@@ -51,7 +53,7 @@ namespace DPHotel.Web.Models
         public string Description { get; set; }
         public string FileName { get; set; }
         public int Width { get; set; }
-        public int Length { get; set; }
+        public int Height { get; set; }
         public string Orientation { get; set; }
         public Room Room { get; set; }
     }

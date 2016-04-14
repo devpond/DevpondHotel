@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DPHotel.Web.Models;
 using System.IO;
+using DPHotel.Web.Business;
 
 namespace DPHotel.Web.Controllers
 {
@@ -129,7 +130,6 @@ namespace DPHotel.Web.Controllers
             //TODO: Check file is an image.
             var newImgs = new List<HotelImage>();
             var fileTools = new FileHelper();
-            //subject editedSubject = null;
             int firstId = 0;
             var fileName = "";
             if (files != null)

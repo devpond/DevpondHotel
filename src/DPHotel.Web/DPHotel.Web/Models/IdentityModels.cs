@@ -39,4 +39,5 @@ namespace DPHotel.Web.Models
         public DbSet<PaymentType> PaymentTypes { get; set; }
         public DbSet<HotelImage> HotelImages { get; set; }
         public DbSet<RoomImage> RoomImages { get; set; }
+    }
 }
