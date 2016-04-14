@@ -30,12 +30,13 @@ namespace DPHotel.Web.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Hotel> hotel { get; set; }
-        public DbSet<Room> room { get; set; }
-        public DbSet<RoomType> room_type { get; set; }
-        public DbSet<Guest> guest { get; set; }
-        public DbSet<Booking> booking { get; set; }
-        public DbSet<Payment> payment { get; set; }
-        public DbSet<PaymentType> payment_type { get; set; }
-    }
+        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<RoomType> RoomTypes { get; set; }
+        public DbSet<Guest> Guests { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+        public DbSet<PaymentType> PaymentTypes { get; set; }
+        public DbSet<HotelImage> HotelImages { get; set; }
+        public DbSet<RoomImage> RoomImages { get; set; }
 }
