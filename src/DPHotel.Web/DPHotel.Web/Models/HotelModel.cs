@@ -23,7 +23,11 @@ namespace DPHotel.Web.Models
         public DateTime DateCreated { get; set; }
         public DateTime LastUpdated { get; set; }
         public string Name { get; set; }
-        public int Description { get; set; }
+        public string Description { get; set; }
+        public string FileName { get; set; }
+        public int Width { get; set; }
+        public int Length { get; set; }
+        public string Orientation { get; set; }
         public Hotel Hotel { get; set; }
     }
     public class Room
@@ -44,7 +48,11 @@ namespace DPHotel.Web.Models
         public DateTime DateCreated { get; set; }
         public DateTime LastUpdated { get; set; }
         public string Name { get; set; }
-        public int Description { get; set; }
+        public string Description { get; set; }
+        public string FileName { get; set; }
+        public int Width { get; set; }
+        public int Length { get; set; }
+        public string Orientation { get; set; }
         public Room Room { get; set; }
     }
     public class RoomType
