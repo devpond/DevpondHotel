@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DPHotel.Web.Models;
+using System.IO;
 
 namespace DPHotel.Web.Controllers
 {
@@ -163,8 +164,8 @@ namespace DPHotel.Web.Controllers
                     //    newImg.UploadedBy = User.Identity.GetUserId();
                     //}
 
-                    newImg.UploadDate = DateTime.Now;
-                    newImg.IsHidden = false;
+                    newImg.DateCreated = DateTime.Now;
+                    //newImg.IsHidden = false;
                     newImg.Description = description;
                     if (img != null)
                     {
