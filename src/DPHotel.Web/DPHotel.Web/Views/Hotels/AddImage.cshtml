@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Add</h2>
+
+@using (Html.BeginForm("AddImage", "Hotels", FormMethod.Post,
+                new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Filename:</label>
+    <input type="file" class="multi" name="files" id="file" multiple="multiple" />
+
+    <label>For Which Hotel?</label><br />
+    @Html.DropDownList("hotelId", (SelectList)ViewBag.HotelList)<br />
+    <label for="description">Description:</label><br />
+    <input type="text" id="description" name="description" />
+    <input type="submit" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

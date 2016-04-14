@@ -43,6 +43,10 @@
         </dd>
 
     </dl>
+    @if (Model.MainImage != null)
+    {
+    <img src="../Images/" + @Model.MainImage.FileName />
+    }
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

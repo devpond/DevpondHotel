@@ -7,10 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DPHotel.Web.Models;
+using DPHotel.Web.Business;
+using System.IO;
+using DPHotel.Web.Settings;
 
 namespace DPHotel.Web.Controllers
 {
-    public class HotelsController : Controller
+    public partial class HotelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -28,6 +31,7 @@ namespace DPHotel.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Hotel hotel = db.Hotels.Find(id);
+            hotel.MainImage = db.HotelImages.Find(hotel.MainImage.Id);
             if (hotel == null)
             {
                 return HttpNotFound();

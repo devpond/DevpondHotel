@@ -7,10 +7,9 @@ namespace DPHotel.Web.Business
 {
     public class FileHelper
     {
-        public string CreateFilename(string fileType)
+        public string CreateFilename(string fileType, string prefix)
         {
-            // Filename format: gsite_randomstring.ext
-            string fileName = "img"; // image prefix. Might want something more imaginative later on
+            string fileName = "";
 
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var stringChars = new char[10];
@@ -22,7 +21,7 @@ namespace DPHotel.Web.Business
             }
 
             var finalString = new String(stringChars);
-            fileName = fileName + finalString + "." + fileType; //add the file extension.
+            fileName = prefix + finalString + "." + fileType; //add the file extension.
 
             return fileName;
         }
