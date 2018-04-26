@@ -1,0 +1,1034 @@
+FORMAT: 1A
+HOST: http://connect.holidaytaxis.com/
+
+# WebServices2
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Products [/products/search/from/{fromType}/{fromCode}/to/{toType}/{toCode}/travelling/{travellingDTM}/returning/{returningDTM}/adults/{noAdults}/children/{noChildren}/infants/{noInfants}]
+
+    
+### Search [GET]
+
++ Request
+    + Headers
+    
+            Accept: application/json
+            Accept-Language: en
+            Api_Key: 31ca14141fb94392665a41b6
+            Agent_Ref: HTX
+            Affiliate_Code: HTX
+        
++ Parameters
+    + fromType: IATA (string, required) - HTX Gateway
+    + fromCode: BGI (string|number, required) - GeoCode, AirportId
+    + toType: GEO (string, required) - HTX Gateway
+    + toCode: `13.17733296,-59.63557004` (string|number, required) - GeoCode
+    + travellingDTM: `2018-08-20T14:00:00` (string, required) - Timestamp of outward journey
+    + returningDTM: `2018-08-28T18:00:00` (string, optional) - Timestamp on inward journey
+    + noAdults: 1 (number, required) - Number of adults [Minimum 1]
+    + noChildren: 1 (number, optional) - Number of children
+    + noInfants: 1 (number, optional) - Number of infants
+    
+
++ Response 200 (application/json)
+    + Headers
+        
+            Connection: Keep-Alive
+            Content-Length: 1237
+            Content-Encoding: gzip
+            Date: Tue, 24 Apr 2018 08:26:45 GMT
+            Keep-Alive: timeout=15, max=100
+            Server: Apache
+            Status: 200
+            Vary: Accept-Encoding, User-Agent
+    
+    + Attributes
+    
+            - search (Search)
+            - travelling (array[Products])
+            - returning (array[Products])
+    
+    + Body
+    
+            {
+                "search": {
+                    "fromtype": "IATA",
+                    "fromcode": "BGI",
+                    "fromname": "Barbados - Grantley Adams Airport",
+                    "fromproperty": null,
+                    "fromdetails": "flight",
+                    "totype": "GEO",
+                    "tocode": "13.17733296,-59.63557004",
+                    "toproperty": null,
+                    "todetails": "accommodation",
+                    "toname": "West Coast Bridgetown to Holetown",
+                    "travelling": "2018-08-20T14:00:00",
+                    "adults": "2",
+                    "children": "2",
+                    "infants": "1"
+                },
+                "travelling": {
+                    "products": [
+                        {
+                            "general": {
+                                "productid": 684271,
+                                "bookingtypeid": 2,
+                                "transfertime": 65,
+                                "producttypeid": 39,
+                                "minpax": null,
+                                "maxpax": null,
+                                "luggage": null,
+                                "perperson": 1,
+                                "producttype": "Shuttle Transfer",
+                                "description": "This is a cost effective shared service with other passengers. Shuttles run between the airport and accommodation excluding private address. You will be dropped off/ picked up from your hotel or nearest accessible point. Your transfer time is estimated but may vary dependant on traffic and number of stops made. There may be a wait at the airport or pick up point as buses run to a schedule. Further information on how to locate your transfer and find out your pick-up time can be found on your booking voucher."
+                            },
+                            "pricing": {
+                                "oldprice": null,
+                                "price": "56.00",
+                                "currency": "GBP",
+                                "prices": [
+                                    {
+                                        "type": "Adult",
+                                        "typecode": "AD",
+                                        "description": "Adult",
+                                        "units": "2",
+                                        "oldprice": "14.00",
+                                        "price": "14.00"
+                                    },
+                                    {
+                                        "type": "Child",
+                                        "typecode": "CH",
+                                        "description": "Child",
+                                        "units": "2",
+                                        "oldprice": "14.00",
+                                        "price": "14.00"
+                                    },
+                                    {
+                                        "type": "Infants",
+                                        "typecode": "IN",
+                                        "description": "Infants",
+                                        "units": "1",
+                                        "oldprice": null,
+                                        "price": "0.00"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "general": {
+                                "productid": 684286,
+                                "bookingtypeid": 2,
+                                "transfertime": 45,
+                                "producttypeid": 2,
+                                "minpax": 4,
+                                "maxpax": 6,
+                                "luggage": 6,
+                                "perperson": 0,
+                                "producttype": "Private Minibus",
+                                "description": "Your professional door to door Minibus transfer is perfect for a larger group of people. In most airports, this service includes ‘Meet & Greet’and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details."
+                            },
+                            "pricing": {
+                                "oldprice": null,
+                                "price": "69.00",
+                                "currency": "GBP",
+                                "prices": {
+                                    "price": {
+                                        "type": "Vehicle",
+                                        "typecode": "VEH",
+                                        "description": "Vehicle",
+                                        "units": 1,
+                                        "oldprice": "69.00",
+                                        "price": "69.00"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "general": {
+                                "productid": 684252,
+                                "bookingtypeid": 2,
+                                "transfertime": 45,
+                                "producttypeid": 2,
+                                "minpax": 3,
+                                "maxpax": 3,
+                                "luggage": 3,
+                                "perperson": 0,
+                                "producttype": "Private Minibus",
+                                "description": "Your professional door to door Minibus transfer is perfect for a larger group of people. In most airports, this service includes ‘Meet & Greet’and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details."
+                            },
+                            "pricing": {
+                                "oldprice": null,
+                                "price": "100.00",
+                                "currency": "GBP",
+                                "prices": {
+                                    "price": {
+                                        "type": "Vehicle",
+                                        "typecode": "VEH",
+                                        "description": "Vehicle",
+                                        "units": 2,
+                                        "oldprice": "50.00",
+                                        "price": "50.00"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "general": {
+                                "productid": 684233,
+                                "bookingtypeid": 2,
+                                "transfertime": 45,
+                                "producttypeid": 1,
+                                "minpax": 1,
+                                "maxpax": 2,
+                                "luggage": 2,
+                                "perperson": 0,
+                                "producttype": "Private Transfer",
+                                "description": "Your professional door to door private transfers. In most airports, this service includes 'Meet & Greet' and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details. Prices shown are per vehicle, and vehicle type could vary depending on supplier availability."
+                            },
+                            "pricing": {
+                                "oldprice": null,
+                                "price": "138.00",
+                                "currency": "GBP",
+                                "prices": {
+                                    "price": {
+                                        "type": "Vehicle",
+                                        "typecode": "VEH",
+                                        "description": "Vehicle",
+                                        "units": 3,
+                                        "oldprice": "46.00",
+                                        "price": "46.00"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "returning": {
+                    "products": [
+                        {
+                            "general": {
+                                "productid": 684271,
+                                "bookingtypeid": 3,
+                                "transfertime": 65,
+                                "producttypeid": 39,
+                                "minpax": null,
+                                "maxpax": null,
+                                "luggage": null,
+                                "perperson": 1,
+                                "producttype": "Shuttle Transfer",
+                                "description": "This is a cost effective shared service with other passengers. Shuttles run between the airport and accommodation excluding private address. You will be dropped off/ picked up from your hotel or nearest accessible point. Your transfer time is estimated but may vary dependant on traffic and number of stops made. There may be a wait at the airport or pick up point as buses run to a schedule. Further information on how to locate your transfer and find out your pick-up time can be found on your booking voucher."
+                            },
+                            "pricing": {
+                                "oldprice": null,
+                                "price": "56.00",
+                                "currency": "GBP",
+                                "prices": [
+                                    {
+                                        "type": "Adult",
+                                        "typecode": "AD",
+                                        "description": "Adult",
+                                        "units": "2",
+                                        "oldprice": "14.00",
+                                        "price": "14.00"
+                                    },
+                                    {
+                                        "type": "Child",
+                                        "typecode": "CH",
+                                        "description": "Child",
+                                        "units": "2",
+                                        "oldprice": "14.00",
+                                        "price": "14.00"
+                                    },
+                                    {
+                                        "type": "Infants",
+                                        "typecode": "IN",
+                                        "description": "Infants",
+                                        "units": "1",
+                                        "oldprice": null,
+                                        "price": "0.00"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "general": {
+                                "productid": 684286,
+                                "bookingtypeid": 3,
+                                "transfertime": 45,
+                                "producttypeid": 2,
+                                "minpax": 4,
+                                "maxpax": 6,
+                                "luggage": 6,
+                                "perperson": 0,
+                                "producttype": "Private Minibus",
+                                "description": "Your professional door to door Minibus transfer is perfect for a larger group of people. In most airports, this service includes ‘Meet & Greet’and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details."
+                            },
+                            "pricing": {
+                                "oldprice": null,
+                                "price": "69.00",
+                                "currency": "GBP",
+                                "prices": {
+                                    "price": {
+                                        "type": "Vehicle",
+                                        "typecode": "VEH",
+                                        "description": "Vehicle",
+                                        "units": 1,
+                                        "oldprice": "69.00",
+                                        "price": "69.00"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "general": {
+                                "productid": 684252,
+                                "bookingtypeid": 3,
+                                "transfertime": 45,
+                                "producttypeid": 2,
+                                "minpax": 3,
+                                "maxpax": 3,
+                                "luggage": 3,
+                                "perperson": 0,
+                                "producttype": "Private Minibus",
+                                "description": "Your professional door to door Minibus transfer is perfect for a larger group of people. In most airports, this service includes ‘Meet & Greet’and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details."
+                            },
+                            "pricing": {
+                                "oldprice": null,
+                                "price": "100.00",
+                                "currency": "GBP",
+                                "prices": {
+                                    "price": {
+                                        "type": "Vehicle",
+                                        "typecode": "VEH",
+                                        "description": "Vehicle",
+                                        "units": 2,
+                                        "oldprice": "50.00",
+                                        "price": "50.00"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "general": {
+                                "productid": 684233,
+                                "bookingtypeid": 3,
+                                "transfertime": 45,
+                                "producttypeid": 1,
+                                "minpax": 1,
+                                "maxpax": 2,
+                                "luggage": 2,
+                                "perperson": 0,
+                                "producttype": "Private Transfer",
+                                "description": "Your professional door to door private transfers. In most airports, this service includes 'Meet & Greet' and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details. Prices shown are per vehicle, and vehicle type could vary depending on supplier availability."
+                            },
+                            "pricing": {
+                                "oldprice": null,
+                                "price": "138.00",
+                                "currency": "GBP",
+                                "prices": {
+                                    "price": {
+                                        "type": "Vehicle",
+                                        "typecode": "VEH",
+                                        "description": "Vehicle",
+                                        "units": 3,
+                                        "oldprice": "46.00",
+                                        "price": "46.00"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+            
++ Response 200 (application/xml)
+    + Headers
+        
+            Connection: Keep-Alive
+            Content-Length: 1237
+            Content-Encoding: gzip
+            Date: Tue, 24 Apr 2018 08:26:45 GMT
+            Keep-Alive: timeout=15, max=100
+            Server: Apache
+            Status: 200
+            Vary: Accept-Encoding, User-Agent
+    
+    + Attributes
+    
+            - search (Search)
+            - travelling (array[Products])
+            - returning (array[Products])
+        
+    + Body
+    
+            <?xml version="1.0"?>
+            <response>
+                <search>
+                    <fromtype>IATA</fromtype>
+                    <fromcode>BGI</fromcode>
+                    <fromname>West Coast Bridgetown to Holetown</fromname>
+                    <fromproperty/>
+                    <fromdetails>flight</fromdetails>
+                    <totype>GEO</totype>
+                    <tocode>13.17733296,-59.63557004</tocode>
+                    <toproperty/>
+                    <todetails>accommodation</todetails>
+                    <toname>Barbados - Grantley Adams Airport</toname>
+                    <travelling>2018-08-20T14:00:00</travelling>
+                    <adults>2</adults>
+                    <children>2</children>
+                    <infants>1</infants>
+                </search>
+                <travelling>
+                    <products>
+                        <product>
+                            <general>
+                                <productid>684271</productid>
+                                <bookingtypeid>2</bookingtypeid>
+                                <transfertime>65</transfertime>
+                                <producttypeid>39</producttypeid>
+                                <producttype>
+                                    <![CDATA[Shuttle Transfer]]>
+                                </producttype>
+                                <description>
+                                    <![CDATA[This is a cost effective shared service with other passengers. Shuttles run between the airport and accommodation excluding private address. You will be dropped off/ picked up from your hotel or nearest accessible point. Your transfer time is estimated but may vary dependant on traffic and number of stops made. There may be a wait at the airport or pick up point as buses run to a schedule. Further information on how to locate your transfer and find out your pick-up time can be found on your booking voucher.]]>
+                                </description>
+                                <minpax/>
+                                <maxpax/>
+                                <luggage/>
+                                <perperson>1</perperson>
+                            </general>
+                            <pricing>
+                                <oldprice/>
+                                <price>56.00</price>
+                                <currency>GBP</currency>
+                                <prices>
+                                    <price>
+                                        <type>Adult</type>
+                                        <typecode>AD</typecode>
+                                        <description>Adult</description>
+                                        <units>2</units>
+                                        <oldprice>14.00</oldprice>
+                                        <price>14.00</price>
+                                    </price>
+                                    <price>
+                                        <type>Child</type>
+                                        <typecode>CH</typecode>
+                                        <description>Child</description>
+                                        <units>2</units>
+                                        <oldprice>14.00</oldprice>
+                                        <price>14.00</price>
+                                    </price>
+                                    <price>
+                                        <type>Infants</type>
+                                        <typecode>IN</typecode>
+                                        <description>Infants</description>
+                                        <units>1</units>
+                                        <oldprice/>
+                                        <price>0.00</price>
+                                    </price>
+                                </prices>
+                            </pricing>
+                        </product>
+                        <product>
+                            <general>
+                                <productid>684286</productid>
+                                <bookingtypeid>2</bookingtypeid>
+                                <transfertime>45</transfertime>
+                                <producttypeid>2</producttypeid>
+                                <producttype>
+                                    <![CDATA[Private Minibus]]>
+                                </producttype>
+                                <description>
+                                    <![CDATA[Your professional door to door Minibus transfer is perfect for a larger group of people. In most airports, this service includes ‘Meet & Greet’and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details.]]>
+                                </description>
+                                <minpax>4</minpax>
+                                <maxpax>6</maxpax>
+                                <luggage>6</luggage>
+                                <perperson>0</perperson>
+                            </general>
+                            <pricing>
+                                <oldprice/>
+                                <price>69.00</price>
+                                <currency>GBP</currency>
+                                <prices>
+                                    <price>
+                                        <type>Vehicle</type>
+                                        <typecode>VEH</typecode>
+                                        <description>Vehicle</description>
+                                        <units>1</units>
+                                        <oldprice>69.00</oldprice>
+                                        <price>69.00</price>
+                                    </price>
+                                </prices>
+                            </pricing>
+                        </product>
+                        <product>
+                            <general>
+                                <productid>684252</productid>
+                                <bookingtypeid>2</bookingtypeid>
+                                <transfertime>45</transfertime>
+                                <producttypeid>2</producttypeid>
+                                <producttype>
+                                    <![CDATA[Private Minibus]]>
+                                </producttype>
+                                <description>
+                                    <![CDATA[Your professional door to door Minibus transfer is perfect for a larger group of people. In most airports, this service includes ‘Meet & Greet’and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details.]]>
+                                </description>
+                                <minpax>3</minpax>
+                                <maxpax>3</maxpax>
+                                <luggage>3</luggage>
+                                <perperson>0</perperson>
+                            </general>
+                            <pricing>
+                                <oldprice/>
+                                <price>100.00</price>
+                                <currency>GBP</currency>
+                                <prices>
+                                    <price>
+                                        <type>Vehicle</type>
+                                        <typecode>VEH</typecode>
+                                        <description>Vehicle</description>
+                                        <units>2</units>
+                                        <oldprice>50.00</oldprice>
+                                        <price>50.00</price>
+                                    </price>
+                                </prices>
+                            </pricing>
+                        </product>
+                        <product>
+                            <general>
+                                <productid>684233</productid>
+                                <bookingtypeid>2</bookingtypeid>
+                                <transfertime>45</transfertime>
+                                <producttypeid>1</producttypeid>
+                                <producttype>
+                                    <![CDATA[Private Transfer]]>
+                                </producttype>
+                                <description>
+                                    <![CDATA[Your professional door to door private transfers. In most airports, this service includes 'Meet & Greet' and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details. Prices shown are per vehicle, and vehicle type could vary depending on supplier availability.]]>
+                                </description>
+                                <minpax>1</minpax>
+                                <maxpax>2</maxpax>
+                                <luggage>2</luggage>
+                                <perperson>0</perperson>
+                            </general>
+                            <pricing>
+                                <oldprice/>
+                                <price>138.00</price>
+                                <currency>GBP</currency>
+                                <prices>
+                                    <price>
+                                        <type>Vehicle</type>
+                                        <typecode>VEH</typecode>
+                                        <description>Vehicle</description>
+                                        <units>3</units>
+                                        <oldprice>46.00</oldprice>
+                                        <price>46.00</price>
+                                    </price>
+                                </prices>
+                            </pricing>
+                        </product>
+                    </products>
+                </travelling>
+                <returning>
+                    <products>
+                        <product>
+                            <general>
+                                <productid>684271</productid>
+                                <bookingtypeid>3</bookingtypeid>
+                                <transfertime>65</transfertime>
+                                <producttypeid>39</producttypeid>
+                                <producttype>
+                                    <![CDATA[Shuttle Transfer]]>
+                                </producttype>
+                                <description>
+                                    <![CDATA[This is a cost effective shared service with other passengers. Shuttles run between the airport and accommodation excluding private address. You will be dropped off/ picked up from your hotel or nearest accessible point. Your transfer time is estimated but may vary dependant on traffic and number of stops made. There may be a wait at the airport or pick up point as buses run to a schedule. Further information on how to locate your transfer and find out your pick-up time can be found on your booking voucher.]]>
+                                </description>
+                                <minpax/>
+                                <maxpax/>
+                                <luggage/>
+                                <perperson>1</perperson>
+                            </general>
+                            <pricing>
+                                <oldprice/>
+                                <price>56.00</price>
+                                <currency>GBP</currency>
+                                <prices>
+                                    <price>
+                                        <type>Adult</type>
+                                        <typecode>AD</typecode>
+                                        <description>Adult</description>
+                                        <units>2</units>
+                                        <oldprice>14.00</oldprice>
+                                        <price>14.00</price>
+                                    </price>
+                                    <price>
+                                        <type>Child</type>
+                                        <typecode>CH</typecode>
+                                        <description>Child</description>
+                                        <units>2</units>
+                                        <oldprice>14.00</oldprice>
+                                        <price>14.00</price>
+                                    </price>
+                                    <price>
+                                        <type>Infants</type>
+                                        <typecode>IN</typecode>
+                                        <description>Infants</description>
+                                        <units>1</units>
+                                        <oldprice/>
+                                        <price>0.00</price>
+                                    </price>
+                                </prices>
+                            </pricing>
+                        </product>
+                        <product>
+                            <general>
+                                <productid>684286</productid>
+                                <bookingtypeid>3</bookingtypeid>
+                                <transfertime>45</transfertime>
+                                <producttypeid>2</producttypeid>
+                                <producttype>
+                                    <![CDATA[Private Minibus]]>
+                                </producttype>
+                                <description>
+                                    <![CDATA[Your professional door to door Minibus transfer is perfect for a larger group of people. In most airports, this service includes ‘Meet & Greet’and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details.]]>
+                                </description>
+                                <minpax>4</minpax>
+                                <maxpax>6</maxpax>
+                                <luggage>6</luggage>
+                                <perperson>0</perperson>
+                            </general>
+                            <pricing>
+                                <oldprice/>
+                                <price>69.00</price>
+                                <currency>GBP</currency>
+                                <prices>
+                                    <price>
+                                        <type>Vehicle</type>
+                                        <typecode>VEH</typecode>
+                                        <description>Vehicle</description>
+                                        <units>1</units>
+                                        <oldprice>69.00</oldprice>
+                                        <price>69.00</price>
+                                    </price>
+                                </prices>
+                            </pricing>
+                        </product>
+                        <product>
+                            <general>
+                                <productid>684252</productid>
+                                <bookingtypeid>3</bookingtypeid>
+                                <transfertime>45</transfertime>
+                                <producttypeid>2</producttypeid>
+                                <producttype>
+                                    <![CDATA[Private Minibus]]>
+                                </producttype>
+                                <description>
+                                    <![CDATA[Your professional door to door Minibus transfer is perfect for a larger group of people. In most airports, this service includes ‘Meet & Greet’and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details.]]>
+                                </description>
+                                <minpax>3</minpax>
+                                <maxpax>3</maxpax>
+                                <luggage>3</luggage>
+                                <perperson>0</perperson>
+                            </general>
+                            <pricing>
+                                <oldprice/>
+                                <price>100.00</price>
+                                <currency>GBP</currency>
+                                <prices>
+                                    <price>
+                                        <type>Vehicle</type>
+                                        <typecode>VEH</typecode>
+                                        <description>Vehicle</description>
+                                        <units>2</units>
+                                        <oldprice>50.00</oldprice>
+                                        <price>50.00</price>
+                                    </price>
+                                </prices>
+                            </pricing>
+                        </product>
+                        <product>
+                            <general>
+                                <productid>684233</productid>
+                                <bookingtypeid>3</bookingtypeid>
+                                <transfertime>45</transfertime>
+                                <producttypeid>1</producttypeid>
+                                <producttype>
+                                    <![CDATA[Private Transfer]]>
+                                </producttype>
+                                <description>
+                                    <![CDATA[Your professional door to door private transfers. In most airports, this service includes 'Meet & Greet' and your driver will be waiting for you in the arrival hall holding a sign with your name on it. Further information on how to locate your transfer can be found on your booking voucher. When returning to the airport your driver will be waiting for you at your pick-up location. Your pick-up time is calculated automatically based on your flight details. Prices shown are per vehicle, and vehicle type could vary depending on supplier availability.]]>
+                                </description>
+                                <minpax>1</minpax>
+                                <maxpax>2</maxpax>
+                                <luggage>2</luggage>
+                                <perperson>0</perperson>
+                            </general>
+                            <pricing>
+                                <oldprice/>
+                                <price>138.00</price>
+                                <currency>GBP</currency>
+                                <prices>
+                                    <price>
+                                        <type>Vehicle</type>
+                                        <typecode>VEH</typecode>
+                                        <description>Vehicle</description>
+                                        <units>3</units>
+                                        <oldprice>46.00</oldprice>
+                                        <price>46.00</price>
+                                    </price>
+                                </prices>
+                            </pricing>
+                        </product>
+                    </products>
+                </returning>
+            </response>
+
+            
++ Response 207 (application/json)
+    + Headers    
+    
+            Connection: Keep-Alive
+            Content-Length: 1237
+            Content-Encoding: gzip
+            Date: Tue, 24 Apr 2018 08:26:45 GMT
+            Keep-Alive: timeout=15, max=100
+            Server: Apache
+            Status: 207
+            Vary: Accept-Encoding, User-Agent
+            
+    + Attributes
+    
+            - errors
+                - travelling (Error)
+                - returning (Error)
+                - search (Search)
+    
+    + Body
+    
+            {
+                "errors": {
+                    "travelling": {
+                        "title": "",
+                        "message": "No results found for your travelling date.",
+                        "display": ""
+                    },
+                    "returning": {
+                        "title": "",
+                        "message": "No results found for your return date.",
+                        "display": ""
+                    }
+                },
+                "search": {
+                    "fromtype": "IATA",
+                    "fromcode": "BGI",
+                    "fromname": "",
+                    "fromproperty": null,
+                    "fromdetails": "flight",
+                    "totype": "GEO",
+                    "tocode": "13.17733296,-59.63557004",
+                    "toproperty": null,
+                    "todetails": "accommodation",
+                    "toname": "",
+                    "travelling": "2021-01-20T14:00:00",
+                    "adults": "2",
+                    "children": "2",
+                    "infants": "1"
+                },
+                "travelling": {
+                    "products": []
+                }
+            }
+    
++ Response 207 (application/xml)
+    + Headers    
+    
+            Connection: Keep-Alive
+            Content-Length: 1237
+            Content-Encoding: gzip
+            Date: Tue, 24 Apr 2018 08:26:45 GMT
+            Keep-Alive: timeout=15, max=100
+            Server: Apache
+            Status: 207
+            Vary: Accept-Encoding, User-Agent
+            
+    + Attributes
+    
+            - errors
+                - travelling (Error)
+                - returning (Error)
+                - search (Search)
+    
+    + Body
+
+            <?xml version="1.0"?>
+            <response>
+                <errors>
+                    <travelling>
+                        <title></title>
+                        <message>No results found for your travelling date.</message>
+                        <display></display>
+                    </travelling>
+                    <returning>
+                        <title></title>
+                        <message>No results found for your return date.</message>
+                        <display></display>
+                    </returning>
+                </errors>
+                <search>
+                    <fromtype>IATA</fromtype>
+                    <fromcode>BGI</fromcode>
+                    <fromname></fromname>
+                    <fromproperty/>
+                    <fromdetails>flight</fromdetails>
+                    <totype>GEO</totype>
+                    <tocode>13.17733296,-59.63557004</tocode>
+                    <toproperty/>
+                    <todetails>accommodation</todetails>
+                    <toname></toname>
+                    <travelling>2021-01-20T14:00:00</travelling>
+                    <adults>2</adults>
+                    <children>2</children>
+                    <infants>1</infants>
+                </search>
+                <travelling>
+                    <products/>
+                </travelling>
+            </response>
+            
++ Response 400 (application/json)
+    + Headers
+            
+            Connection: Keep-Alive
+            Content-Length: 143
+            Content-Encoding: gzip
+            Date: Tue, 24 Apr 2018 08:26:45 GMT
+            Keep-Alive: timeout=15, max=100
+            Server: Apache
+            Status: 400
+            Vary: Accept-Encoding, User-Agent
+            
+    + Attributes
+            
+            - errors
+                - invalid_dates (Error)
+            
+    + Body
+    
+            {
+                "errors": {
+                    "invalid_dates": {
+                        "title": "",
+                        "message": "Make sure all travelling dates are in the future.",
+                        "display": ""
+                    }
+                }
+            }
+            
++ Response 400 (application/xml)
+    + Headers
+            
+            Connection: Keep-Alive
+            Content-Length: 143
+            Content-Encoding: gzip
+            Date: Tue, 24 Apr 2018 08:26:45 GMT
+            Keep-Alive: timeout=15, max=100
+            Server: Apache
+            Status: 400
+            Vary: Accept-Encoding, User-Agent
+            
+    + Attributes
+            
+            - errors
+                - invalid (Error)
+            
+    + Body
+    
+            <?xml version="1.0"?>
+            <response>
+                <errors>
+                    <invalid>
+                        <title></title>
+                        <message>Make sure all travelling dates are in the future.</message>
+                        <display></display>
+                    </invalid>
+                </errors>
+            </response>
+            
++ Response 401 (application/json)
+    + Headers
+        
+            Connection: Keep-Alive
+            Content-Length: 143
+            Content-Encoding: gzip
+            Date: Tue, 24 Apr 2018 08:26:45 GMT
+            Keep-Alive: timeout=15, max=100
+            Server: Apache
+            Status: 401
+            Vary: Accept-Encoding, User-Agent
+    
+    + Attributes
+    
+            - errors
+                - unauthorised (Error)
+            
+    + Body
+    
+            {
+                "errors": {
+                    "unauthorised": {
+                        "title": "",
+                        "message": "You have provided either an invalid API Key or you are out of IP range, please send valid credentials.",
+                        "display": ""
+                    }
+                }
+            }
+        
++ Response 401 (application/xml)
+    + Headers
+        
+            Connection: Keep-Alive
+            Content-Length: 143
+            Content-Encoding: gzip
+            Date: Tue, 24 Apr 2018 08:26:45 GMT
+            Keep-Alive: timeout=15, max=100
+            Server: Apache
+            Status: 401
+            Vary: Accept-Encoding, User-Agent
+    
+    + Attributes
+    
+            - errors
+                - unauthorised (Error)
+            
+    + Body
+    
+            <?xml version="1.0"?>
+            <response>
+                <errors>
+                    <unauthorised>
+                        <title></title>
+                        <message>You have provided either an invalid API Key or you are out of IP range, please send valid credentials.</message>
+                        <display></display>
+                    </unauthorised>
+                </errors>
+            </response>
+        
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 207 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
+
+# Data Structures
+
+## Search (object)
+
+- fromtype: `IATA` (string)
+- fromcode: `BGI` (string)
+- fromname: `Barbados - Grantley Adams Airport` (string)
+- fromproperty: `null` (string, nullable)
+- fromdetails: `flight` (string)
+- totype: `GEO` (string)
+- tocode: `13.17733296,-59.63557004` (string)
+- toproperty: `null` (string, nullable)
+- todetails: `accommodation` (string, nullable)
+- toname: `West Coast Bridgetown to Holetown` (string)
+- travelling: `2018-08-20T14:00:00` (string)
+- adults: `2` (number)
+- children: `2` (number, nullable)
+- infants: `1` (number, nullable)
+
+## Products (object)
+
+- general (General)
+- pricing (Pricing)
+
+## Prices (object)
+
+- type: `Adult` (string)
+- typecode: `AD` (string)
+- description: `Adult` (string)
+- units: `2` (number)
+- oldprice: `14.00` (number)
+- price: `14.00` (number)
+
+## Pricing (object)
+
+- oldprice: 0 (number, nullable)
+- price: `56.00` (number)
+- currency: `GBP` (string)
+- prices (array[Prices])
+
+## General (object)
+
+- productid: `684271` (number)
+- bookingtypeid: `2` (number)
+- transfertime: `65` (number)
+- producttypeid: `39` (number)
+- minpax: 0 (number, nullable)
+- maxpax: 0 (number, nullable)
+- luggage: 6 (number, nullable)
+- perperson: `1` (number)
+- producttype: `Shuttle Transfer` (string)
+- description: `This is a cost effective shared service with other passengers. Shuttles run between the airport and accommodation excluding private address. You will be dropped off/ picked up from your hotel or nearest accessible point. Your transfer time is estimated but may vary dependant on traffic and number of stops made. There may be a wait at the airport or pick up point as buses run to a schedule. Further information on how to locate your transfer and find out your pick-up time can be found on your booking voucher.` (string)
+
+## GatewayType (enum[string])
+
+- `AIR`
+- `PRT`
+- `STN`
+- `BUS`
+- `RST`
+- `IATA`
+- `TTI`
+- `IFF`
+- `GIATA`
+- `GEO`
+
+## Error (object)
+- title: ``
+- message: `No results found for your travelling date.`
+- display: ``
